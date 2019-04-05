@@ -12,3 +12,25 @@
 .navbar a {
   margin-right: 8px;
 }
+
+.form-btn {
+  border-radius: 15px;
+  width: 8rem;
+  height: 2.5rem;
+  background: #42bdef;
+}
+
+form {
+  margin-top: 5rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form input {
+  border: 1px solid #42bdef;
+  margin: 1rem 0;
+  height: 3rem;
+  width: 20rem;
+}

@@ -13,10 +13,16 @@ const EachSmurf = props => {
       <img className="item-list-image" src={smurf.imageUrl} alt={smurf.name} />
       <strong>{smurf.height} tall</strong>
       <p>{smurf.age} smurf years old</p>
-      <button onClick={e => props.smurfUpdate(e, smurf.id)}>
+      <button
+        className="form-btn"
+        onClick={e => props.smurfUpdate(e, smurf.id)}
+      >
         change smurf
       </button>
-      <button onClick={e => props.deleteSmurf(e, smurf.id)}>
+      <button
+        className="form-btn"
+        onClick={e => props.deleteSmurf(e, smurf.id)}
+      >
         delete smurf
       </button>
     </div>

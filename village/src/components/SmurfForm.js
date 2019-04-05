@@ -47,6 +47,7 @@ class SmurfForm extends Component {
     return (
       <div className="SmurfForm">
         <form onSubmit={this.addSmurf}>
+          <h1>{`${this.props.active ? "Update" : "Add New"} Smurf`}</h1>
           <input
             onChange={this.handleInputChange}
             placeholder="name"
@@ -71,7 +72,7 @@ class SmurfForm extends Component {
             value={imageUrl}
             name="imageUrl"
           />
-          <button type="submit">{`${
+          <button className="form-btn" type="submit">{`${
             this.props.active ? "update" : "add"
           } smurf`}</button>
         </form>
