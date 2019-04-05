@@ -1,53 +1,80 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class SmurfForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
-      age: '',
-      height: ''
+      smurf: this.props.smurf
     };
   }
 
   addSmurf = event => {
+    const { active } = this.props;
     event.preventDefault();
     // add code to create the smurf using the api
+    if (active) {
+      this.props.changeSmurf(this.state.smurf);
+    } else {
+      this.props.addSmurfForm(this.state.smurf);
+    }
 
     this.setState({
-      name: '',
-      age: '',
-      height: ''
+      smurf: {
+        name: "",
+        height: "",
+        age: "",
+        imageUrl: ""
+      }
     });
-  }
+  };
 
   handleInputChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
+    e.persist();
+    let value = e.target.value;
+    if (e.target.name === "age") {
+      value = parseInt(value, 10);
+    }
+    this.setState(prevState => ({
+      smurf: {
+        ...prevState.smurf,
+        [e.target.name]: value
+      }
+    }));
   };
 
   render() {
+    const { name, age, height, imageUrl } = this.state.smurf;
     return (
       <div className="SmurfForm">
         <form onSubmit={this.addSmurf}>
+          <h1>{`${this.props.active ? "Update" : "Add New"} Smurf`}</h1>
           <input
             onChange={this.handleInputChange}
             placeholder="name"
-            value={this.state.name}
+            value={name}
             name="name"
           />
           <input
             onChange={this.handleInputChange}
             placeholder="age"
-            value={this.state.age}
+            value={age}
             name="age"
           />
           <input
             onChange={this.handleInputChange}
             placeholder="height"
-            value={this.state.height}
+            value={height}
             name="height"
           />
-          <button type="submit">Add to the village</button>
+          <input
+            onChange={this.handleInputChange}
+            placeholder="image"
+            value={imageUrl}
+            name="imageUrl"
+          />
+          <button className="form-btn" type="submit">{`${
+            this.props.active ? "update" : "add"
+          } smurf`}</button>
         </form>
       </div>
     );
