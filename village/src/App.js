@@ -17,7 +17,8 @@ class App extends Component {
       smurf: {
         name: "",
         age: "",
-        height: ""
+        height: "",
+        imageUrl: ""
       }
     };
   }

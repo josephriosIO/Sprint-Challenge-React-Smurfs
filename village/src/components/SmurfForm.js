@@ -22,7 +22,8 @@ class SmurfForm extends Component {
       smurf: {
         name: "",
         height: "",
-        age: ""
+        age: "",
+        imageUrl: ""
       }
     });
   };
@@ -42,7 +43,7 @@ class SmurfForm extends Component {
   };
 
   render() {
-    const { name, age, height } = this.state.smurf;
+    const { name, age, height, imageUrl } = this.state.smurf;
     return (
       <div className="SmurfForm">
         <form onSubmit={this.addSmurf}>
@@ -63,6 +64,12 @@ class SmurfForm extends Component {
             placeholder="height"
             value={height}
             name="height"
+          />
+          <input
+            onChange={this.handleInputChange}
+            placeholder="image"
+            value={imageUrl}
+            name="imageUrl"
           />
           <button type="submit">{`${
             this.props.active ? "update" : "add"

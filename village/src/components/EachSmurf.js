@@ -10,6 +10,7 @@ const EachSmurf = props => {
   return (
     <div className="Smurf">
       <h3>{smurf.name}</h3>
+      <img className="item-list-image" src={smurf.imageUrl} alt={smurf.name} />
       <strong>{smurf.height} tall</strong>
       <p>{smurf.age} smurf years old</p>
       <button onClick={e => props.smurfUpdate(e, smurf.id)}>
