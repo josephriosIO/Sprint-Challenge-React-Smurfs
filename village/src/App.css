@@ -9,6 +9,12 @@
   background: #42afef;
 }
 
+.active {
+  width: 5rem;
+  padding: 1rem;
+  background: #42bdef;
+}
+
 .navbar a {
   margin-right: 8px;
 }
