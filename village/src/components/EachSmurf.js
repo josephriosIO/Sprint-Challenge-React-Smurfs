@@ -15,6 +15,9 @@ const EachSmurf = props => {
       <button onClick={e => props.smurfUpdate(e, smurf.id)}>
         change smurf
       </button>
+      <button onClick={e => props.deleteSmurf(e, smurf.id)}>
+        delete smurf
+      </button>
     </div>
   );
 };
