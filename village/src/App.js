@@ -75,7 +75,9 @@ class App extends Component {
           <NavLink activeClassName="active" exact to="/">
             Home
           </NavLink>
-          <NavLink to="/smurf-form">Form</NavLink>
+          <NavLink to="/smurf-form">{`${
+            this.state.active ? "Update Smurf" : "Add Smurf"
+          }`}</NavLink>
         </div>
         <Route
           exact
